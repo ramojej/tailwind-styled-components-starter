@@ -1,5 +1,10 @@
 import { graphql, useStaticQuery, Link } from "gatsby";
 import React, { useState } from "react";
+import tw, { styled } from "twin.macro";
+
+const StyledLink = styled(Link)`
+  ${tw`bg-white text-gray-800 hover:text-blue-500`}
+`;
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -62,13 +67,13 @@ function Header() {
               title: `Contact`,
             },
           ].map((link) => (
-            <Link
+            <StyledLink
               className="block mt-4 text-white no-underline md:inline-block md:mt-0 md:ml-6"
               key={link.title}
               to={link.route}
             >
               {link.title}
-            </Link>
+            </StyledLink>
           ))}
         </nav>
       </div>
