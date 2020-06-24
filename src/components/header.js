@@ -6,6 +6,10 @@ const StyledLink = styled(Link)`
   ${tw`bg-white text-gray-800 hover:text-blue-500`}
 `;
 
+const Burger = styled.button`
+  ${tw`flex items-center block px-3 py-2 text-white border border-white rounded md:hidden active:outline-none focus:outline-none`}
+`;
+
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
   const { site } = useStaticQuery(graphql`
@@ -38,10 +42,7 @@ function Header() {
           </h1>
         </Link>
 
-        <button
-          className="flex items-center block px-3 py-2 text-white border border-white rounded md:hidden"
-          onClick={() => toggleExpansion(!isExpanded)}
-        >
+        <Burger onClick={() => toggleExpansion(!isExpanded)}>
           <svg
             className="w-3 h-3 fill-current"
             viewBox="0 0 20 20"
@@ -50,7 +51,7 @@ function Header() {
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
-        </button>
+        </Burger>
 
         <nav
           className={`${
