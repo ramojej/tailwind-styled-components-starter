@@ -5,6 +5,7 @@
   "author": "Taylor Bryant <taylor@bryant.io>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
+    "framer-motion": "^1.11.1",
     "gatsby": "2.23.3",
     "gatsby-plugin-manifest": "2.4.11",
     "gatsby-plugin-offline": "3.2.9",
